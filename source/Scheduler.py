@@ -2,7 +2,13 @@
 This module contain the scheduling algorithms used for the Application. 
 Implementation on this project will contain FIFO and SJFS algorithm. 
 """
-
+try: # this is temporary, remove when tests are moved in a separate folder
+    import sys
+    from os.path import dirname, abspath
+    sys.path.append(dirname(dirname(abspath(__file__))))
+except Exception as e:
+    print(e)
+    
 try:
     from typing import List, Union
     from uuid import uuid4
@@ -56,8 +62,8 @@ class Scheduler:
     
     def fifo(self) -> List[Task]:
         """
-        Returns:
-            List[Task]: FIFO wrapper of the SJF algorithm.
+        :returns: FIFO wrapper of the SJF algorithm.
+        :rtype: List[Task]
         """
         if not self.is_sorted:
             self.__shortest_job_next()
@@ -69,8 +75,8 @@ class Scheduler:
         """
         Extends constructor so you would not need to instantiate over and over.
         
-        Args:
-            task (List[Task]): pool of tasks to be scheduled.
+        :param name: task : pool of tasks to be scheduled.
+        :param type: List[Task]
         """
         self.task_list.extend(task)
         self.is_sorted = False
@@ -86,8 +92,8 @@ class Scheduler:
         """
         Set completed task and update the status of that task.
 
-        Args:
-            task (Union[List[Task], Task]): pool of tasks that will be updated.
+        :param name: task: pool of tasks that will be updated.
+        :param type: Union[List[Task], Task] 
         """
 
         if type(task) is Task: 
@@ -105,15 +111,15 @@ class Scheduler:
 
     def get_completed_task(self) -> List[Task]:
         """
-        Returns:
-            List[Task]: Independent copy completed tasks.
+        :rtype: List[Task]
+        :returns: Independent copy completed tasks.
         """
         return list(filter(lambda x: x.is_completed, self.task_list))
         
     def get_pending_task(self) -> List[Task]:
         """
-        Returns:
-            List[Task]: Independent copy of pending tasks. 
+        :rtype: List[Task]
+        :returns: Independent copy of pending tasks. 
         """
         return list(filter(lambda x: not x.is_completed, self.task_list))
         

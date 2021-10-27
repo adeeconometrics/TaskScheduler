@@ -33,6 +33,10 @@ class Task:
                 f'priority: {self.priority} \n' 
                 f'is completed: {self.is_completed} \n')
 
+    # as a consequence id_number *must* be unique
+    def __eq__(self, obj) -> bool:
+        return self.id_number == obj.id_number 
+
 class Scheduler:
     """
     Responsible for handling the schedule of the task.
@@ -106,7 +110,6 @@ class Scheduler:
         """
         return list(filter(lambda x: x.is_completed, self.task_list))
         
-
     def get_pending_task(self) -> List[Task]:
         """
         Returns:
@@ -128,6 +131,6 @@ if __name__ == '__main__':
     s.set_completed_task([t1, t2, t5])
     # print(*s.fifo(), sep='\n')
     print(*s.get_pending_task(), sep='\n')
-    print('Completed tasks\n')
-    print(*s.get_completed_task(), sep='\n')
+    # print('Completed tasks\n')
+    # print(*s.get_completed_task(), sep='\n')
     print('done!')

@@ -6,13 +6,23 @@
 Welcome to TaskScheduler's documentation!
 =========================================
 
-.. automodule :: Scheduler
-.. autoclass:: Scheduler
-   :members:
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+Submodules
+----------
+
+.. automodule:: Scheduler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: App
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   
 
 Indices and tables
 ==================

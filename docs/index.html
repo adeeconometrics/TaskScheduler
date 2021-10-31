@@ -36,7 +36,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to TaskScheduler's documentation!</a></li>
+<li><a class="reference internal" href="#">Welcome to TaskScheduler's documentation!</a><ul>
+<li><a class="reference internal" href="#module-Scheduler">Submodules</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </div>
@@ -64,17 +67,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-Scheduler">
-<span id="welcome-to-taskscheduler-s-documentation"></span><h1>Welcome to TaskScheduler's documentation!<a class="headerlink" href="#module-Scheduler" title="Permalink to this headline"></a></h1>
+  <div class="section" id="welcome-to-taskscheduler-s-documentation">
+<h1>Welcome to TaskScheduler's documentation!<a class="headerlink" href="#welcome-to-taskscheduler-s-documentation" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="module-Scheduler">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-Scheduler" title="Permalink to this headline"></a></h2>
 <p>This module contain the scheduling algorithms used for the Application.
 Implementation on this project will contain FIFO and SJFS algorithm.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="Scheduler.Scheduler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">Scheduler.</span></span><span class="sig-name descname"><span class="pre">Scheduler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Scheduler.html#Scheduler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler" title="Permalink to this definition"></a></dt>
-<dd><p>Responsible for handling the schedule of the task.</p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">Scheduler.</span></span><span class="sig-name descname"><span class="pre">Scheduler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Scheduler.html#Scheduler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Responsible for handling the schedule of the task.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="Scheduler.Scheduler.create_schedule">
-<span class="sig-name descname"><span class="pre">create_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.create_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.create_schedule" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.create_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.create_schedule" title="Permalink to this definition"></a></dt>
 <dd><p>Extends constructor so you would not need to instantiate over and over.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -88,23 +96,23 @@ Implementation on this project will contain FIFO and SJFS algorithm.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Scheduler.Scheduler.fifo">
-<span class="sig-name descname"><span class="pre">fifo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.fifo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.fifo" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fifo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.fifo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.fifo" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>FIFO wrapper of the SJF algorithm.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[Task]</p>
+<dd class="field-even"><p>List[<a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task">Task</a>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Scheduler.Scheduler.get_completed_task">
-<span class="sig-name descname"><span class="pre">get_completed_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.get_completed_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.get_completed_task" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_completed_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.get_completed_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.get_completed_task" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[Task]</p>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task">Task</a>]</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Independent copy completed tasks.</p>
@@ -114,10 +122,10 @@ Implementation on this project will contain FIFO and SJFS algorithm.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Scheduler.Scheduler.get_pending_task">
-<span class="sig-name descname"><span class="pre">get_pending_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.get_pending_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.get_pending_task" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_pending_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.get_pending_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.get_pending_task" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[Task]</p>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task">Task</a>]</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Independent copy of pending tasks.</p>
@@ -125,9 +133,14 @@ Implementation on this project will contain FIFO and SJFS algorithm.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Scheduler.Scheduler.is_sorted">
+<span class="sig-name descname"><span class="pre">is_sorted</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#Scheduler.Scheduler.is_sorted" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="Scheduler.Scheduler.set_completed_task">
-<span class="sig-name descname"><span class="pre">set_completed_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Scheduler.Task</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.set_completed_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.set_completed_task" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_completed_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.set_completed_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.set_completed_task" title="Permalink to this definition"></a></dt>
 <dd><p>Set completed task and update the status of that task.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -139,6 +152,11 @@ Implementation on this project will contain FIFO and SJFS algorithm.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Scheduler.Scheduler.task_list">
+<span class="sig-name descname"><span class="pre">task_list</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#Scheduler.Scheduler.task_list" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="Scheduler.Scheduler.view_schedule">
 <span class="sig-name descname"><span class="pre">view_schedule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Scheduler.html#Scheduler.view_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Scheduler.view_schedule" title="Permalink to this definition"></a></dt>
@@ -147,7 +165,72 @@ Implementation on this project will contain FIFO and SJFS algorithm.</p>
 
 </dd></dl>
 
-<div class="toctree-wrapper compound">
+<dl class="py class">
+<dt class="sig sig-object py" id="Scheduler.Task">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">Scheduler.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Scheduler.html#Task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.Task" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representation of Task inputted by the user.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Scheduler.search_id">
+<span class="sig-prename descclassname"><span class="pre">Scheduler.</span></span><span class="sig-name descname"><span class="pre">search_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/Scheduler.html#search_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Scheduler.search_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-App"></span><p>This module contains the implementation of
+classes for the Application Interface.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="App.FileHandler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">FileHandler</span></span><a class="reference internal" href="_modules/App.html#FileHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.FileHandler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Responible for handling files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="App.FileHandler.read_completed_dir">
+<span class="sig-name descname"><span class="pre">read_completed_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/App.html#FileHandler.read_completed_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.FileHandler.read_completed_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Reads completed tasks in the completed directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.FileHandler.read_pending_dir">
+<span class="sig-name descname"><span class="pre">read_pending_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/App.html#FileHandler.read_pending_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.FileHandler.read_pending_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Reads pending tasks in the pending directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.FileHandler.update_completed_dir">
+<span class="sig-name descname"><span class="pre">update_completed_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/App.html#FileHandler.update_completed_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.FileHandler.update_completed_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the status of completed tasks directory.
+:param name: task: Task instance that is marked as complete by the Scheduler.
+:param type: Task</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.FileHandler.update_pending_dir">
+<span class="sig-name descname"><span class="pre">update_pending_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#Scheduler.Task" title="Scheduler.Task"><span class="pre">Scheduler.Task</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/App.html#FileHandler.update_pending_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.FileHandler.update_pending_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the status of pending tasks directory.
+:param name: task: Task instance that is marked as complete by the Scheduler.
+:param type: Task</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="App.Interface">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">Interface</span></span><a class="reference internal" href="_modules/App.html#Interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.Interface" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Responsible for communicating with the user.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="App.Interface.get_project">
+<span class="sig-name descname"><span class="pre">get_project</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/App.html#Interface.get_project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.Interface.get_project" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.Interface.view_project">
+<span class="sig-name descname"><span class="pre">view_project</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/App.html#Interface.view_project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#App.Interface.view_project" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="indices-and-tables">

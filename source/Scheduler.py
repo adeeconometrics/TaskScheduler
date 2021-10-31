@@ -10,7 +10,7 @@ except Exception as e:
     print(e)
     
 try:
-    from typing import List, Union
+    from typing import List, Union, Optional
     from uuid import uuid4
 except Exception as e:
     print(f'Importing module {e} has caused an error.')
@@ -34,10 +34,10 @@ class Task:
 
     def __str__(self) -> str:
         return (f'id number: {self.id_number} \n'
-                f'title: {self.title} \n'
-                f'size: {self.size} \n'
-                f'priority: {self.priority} \n' 
-                f'is completed: {self.is_completed} \n')
+                f'\ttitle: {self.title} \n'
+                f'\tsize: {self.size} \n'
+                f'\tpriority: {self.priority} \n' 
+                f'\tis completed: {self.is_completed} \n')
 
     # as a consequence id_number *must* be unique
     def __eq__(self, obj) -> bool:
@@ -50,8 +50,9 @@ class Scheduler:
     task_list:List[Task] = []
     is_sorted:bool = False
 
-    def __init__(self, task:List[Task]) -> None:
-        self.task_list.extend(task)
+    def __init__(self, task:List[Task] = None) -> None:
+        if task is not None:
+            self.task_list.extend(task)
         
     def __shortest_job_next(self)->None:
         """
@@ -123,7 +124,10 @@ class Scheduler:
         """
         return list(filter(lambda x: not x.is_completed, self.task_list))
         
-    
+
+def search_id(tasks:List[Task], id_number:int)->Optional[List[Task]]:
+    return list(filter(lambda x: x.id_number == id_number, tasks))
+
 if __name__ == '__main__':
     t1 = Task(1,'T2',5.5,1)
     t2 = Task(2,'T3',3.4,1)

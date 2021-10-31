@@ -73,13 +73,13 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
     
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span>
     <span class="kn">from</span> <span class="nn">uuid</span> <span class="k">import</span> <span class="n">uuid4</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Importing module </span><span class="si">{e}</span><span class="s1"> has caused an error.&#39;</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Task</span><span class="p">:</span>
+<div class="viewcode-block" id="Task"><a class="viewcode-back" href="../index.html#Scheduler.Task">[docs]</a><span class="k">class</span> <span class="nc">Task</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Representation of Task inputted by the user. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -97,14 +97,14 @@
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="s1">&#39;id number: </span><span class="si">{self.id_number}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
-                <span class="n">f</span><span class="s1">&#39;title: </span><span class="si">{self.title}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
-                <span class="n">f</span><span class="s1">&#39;size: </span><span class="si">{self.size}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
-                <span class="n">f</span><span class="s1">&#39;priority: </span><span class="si">{self.priority}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span> 
-                <span class="n">f</span><span class="s1">&#39;is completed: </span><span class="si">{self.is_completed}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">title: </span><span class="si">{self.title}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="n">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">size: </span><span class="si">{self.size}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="n">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">priority: </span><span class="si">{self.priority}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span> 
+                <span class="n">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">is completed: </span><span class="si">{self.is_completed}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="c1"># as a consequence id_number *must* be unique</span>
     <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_number</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">id_number</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_number</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">id_number</span> </div>
 
 <div class="viewcode-block" id="Scheduler"><a class="viewcode-back" href="../index.html#Scheduler.Scheduler">[docs]</a><span class="k">class</span> <span class="nc">Scheduler</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -113,8 +113,9 @@
     <span class="n">task_list</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="n">Task</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">is_sorted</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="n">Task</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="n">Task</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">task</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
         
     <span class="k">def</span> <span class="nf">__shortest_job_next</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -186,7 +187,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="ow">not</span> <span class="n">x</span><span class="o">.</span><span class="n">is_completed</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="p">))</span></div></div>
         
-    
+
+<div class="viewcode-block" id="search_id"><a class="viewcode-back" href="../index.html#Scheduler.search_id">[docs]</a><span class="k">def</span> <span class="nf">search_id</span><span class="p">(</span><span class="n">tasks</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="n">Task</span><span class="p">],</span> <span class="n">id_number</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Task</span><span class="p">]]:</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">id_number</span> <span class="o">==</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">tasks</span><span class="p">))</span></div>
+
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">t1</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;T2&#39;</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">t2</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;T3&#39;</span><span class="p">,</span><span class="mf">3.4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
